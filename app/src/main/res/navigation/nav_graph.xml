@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/characterFragment2">
+    app:startDestination="@id/pagerFragment">
 
     <fragment
         android:id="@+id/characterFragment2"
@@ -11,8 +11,21 @@
         android:label="fragment_character"
         tools:layout="@layout/fragment_character"/>
     <fragment
-        android:id="@+id/baseFragment"
-        android:name="com.example.rickandmorty.base.BaseFragment"
-        android:label="BaseFragment" />
+        android:id="@+id/episodeFragment"
+        android:name="com.example.rickandmorty.presentation.ui.fragments.character.EpisodeFragment"
+        android:label="EpisodeFragment" />
+    <fragment
+        android:id="@+id/locationFragment"
+        android:name="com.example.rickandmorty.presentation.ui.fragments.character.ext.LocationFragment"
+        android:label="LocationFragment" />
+    <fragment
+        android:id="@+id/episodeFragment2"
+        android:name="com.example.rickandmorty.presentation.ui.fragments.episode.EpisodeFragment"
+        android:label="EpisodeFragment" />
+    <fragment
+        android:id="@+id/pagerFragment"
+        android:name="com.example.rickandmorty.presentation.ui.fragments.pager.PagerFragment"
+        android:label="fragment_pager"
+        tools:layout="@layout/fragment_pager" />
 
 </navigation>

@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.rickandmorty"
-        minSdk 27
+        minSdk 26
         targetSdk 33
         versionCode 1
         versionName "1.0"
@@ -36,6 +36,8 @@ android {
 }
 
 dependencies {
+    implementation 'androidx.paging:paging-common-ktx:3.1.1'
+    implementation 'androidx.leanback:leanback-paging:1.1.0-alpha09'
     def nav_version = "2.5.3"
 
     implementation 'androidx.core:core-ktx:1.10.0'

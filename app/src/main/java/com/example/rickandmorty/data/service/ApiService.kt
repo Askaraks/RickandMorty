@@ -1,5 +1,10 @@
 package com.example.rickandmorty.data.service
 
+import androidx.paging.Pager
+import androidx.paging.PagingConfig
+import androidx.paging.PagingData
+import com.example.rickandmorty.data.model.Episode
+import com.example.rickandmorty.data.model.Location
 import com.example.rickandmorty.data.model.MainResponse
 import retrofit2.Call
 import retrofit2.http.GET
@@ -10,7 +15,7 @@ interface ApiService {
 
     @GET("character")
     fun getCharacters(
-        @Query("pages") page: Int? =1
+        @Query("pages") page: Int
     ) : Call<MainResponse<com.example.rickandmorty.data.model.Result>>
 
     @GET("character/{id}")
@@ -18,5 +23,11 @@ interface ApiService {
         @Path("id") id: String,
     ): Call<com.example.rickandmorty.data.model.Result>
 
+    @GET("location")
+    fun getLocations(@Query("page") page: Int): Call<MainResponse<Location>>
+
+
+    @GET("episode")
+    fun getEpisodes(@Query("page") page: Int): Call<MainResponse<Episode>>
 
 }

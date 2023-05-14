@@ -11,8 +11,8 @@ class CharacterViewModel : ViewModel() {
     var liveData: LiveData<MainResponse<com.example.rickandmorty
     .data.model.Result>> = MutableLiveData()
 
-    fun getCharacter() {
-        liveData = repository.getCharacter()
+    fun getCharacter(pager: Int) {
+        liveData = repository.getCharacter(pager)
     }
 
 

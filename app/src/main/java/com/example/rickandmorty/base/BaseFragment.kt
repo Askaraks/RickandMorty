@@ -9,9 +9,9 @@ import androidx.viewbinding.ViewBinding
 import com.example.rickandmorty.databinding.FragmentCharacterBinding
 
 typealias Inflate<T> = (LayoutInflater, ViewGroup?, Boolean) -> T
-abstract class BaseFragment<VB: ViewBinding>(private val inflate: Inflate<FragmentCharacterBinding>)
+abstract class BaseFragment<VB: ViewBinding>(private val inflate: Inflate<VB>)
     : Fragment() {
-    private var _binding: FragmentCharacterBinding? = null
+    private var _binding: VB? = null
     protected val binding get() = _binding!!
 
     override fun onCreateView(
@@ -21,11 +21,10 @@ abstract class BaseFragment<VB: ViewBinding>(private val inflate: Inflate<Fragme
     ): View? {
         _binding = inflate(inflater, container, false)
         return binding.root
-        setupUI()
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        setupUI()
         setupObserver()
     }
     abstract fun setupUI()

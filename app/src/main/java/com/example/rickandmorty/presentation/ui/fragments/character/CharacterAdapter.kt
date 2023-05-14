@@ -12,11 +12,11 @@ import com.example.rickandmorty.databinding.ItemListBinding
 import com.example.rickandmorty.presentation.ui.fragments.character.ext.loadImage
 
 class CharacterAdapter(private val click : (id: Int) -> Unit) : Adapter<CharacterAdapter.AdapterViewHolder>() {
-    private var list: ArrayList<com.example.rickandmorty.data.model.Result> = arrayListOf()
+    private val list = ArrayList<com.example.rickandmorty.data.model.Result>()
 
     @SuppressLint("NotifyDataSetChanged")
-    fun setList(list: ArrayList<com.example.rickandmorty.data.model.Result> = arrayListOf()){
-        this.list = list
+    fun setList(list: List<com.example.rickandmorty.data.model.Result>){
+        this.list.addAll(list)
         notifyDataSetChanged()
     }
 

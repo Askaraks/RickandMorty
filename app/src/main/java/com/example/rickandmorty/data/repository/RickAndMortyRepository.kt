@@ -12,9 +12,10 @@ import com.example.rickandmorty.data.service.retrofit
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import javax.inject.Inject
 
-class RickAndMortyRepository {
-    private val apiService = retrofit.create(ApiService::class.java)
+class RickAndMortyRepository @Inject constructor(private val apiService: ApiService)
+{
 
 
     fun getCharacter(pager: Int): LiveData<MainResponse<Result>> {
@@ -26,11 +27,9 @@ class RickAndMortyRepository {
             ) {
                 liveData.value = response.body()
             }
-
             override fun onFailure(call: Call<MainResponse<Result>>, t: Throwable) {
                 t.localizedMessage?.let { Log.e("Walter", it) }
             }
-
         })
         return liveData
     }
@@ -71,8 +70,6 @@ class RickAndMortyRepository {
         })
         return liveData
     }
-
-
     fun getDetail(id: String): LiveData<Result> {
         val liveData = MutableLiveData<Result>()
         apiService.getSingleCharacter(id).enqueue(object : Callback<Result> {

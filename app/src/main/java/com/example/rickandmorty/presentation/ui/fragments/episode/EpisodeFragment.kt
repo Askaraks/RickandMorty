@@ -14,7 +14,7 @@ class EpisodeFragment: BaseFragment<FragmentEpisodeBinding>(FragmentEpisodeBindi
 
     override fun setupUI() {
         adapter = EpisodeAdapter()
-        viewModel.getEpisode(1)
+        viewModel.getEpisode(page)
 
     }
 

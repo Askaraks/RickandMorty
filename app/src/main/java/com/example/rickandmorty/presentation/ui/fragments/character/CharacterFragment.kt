@@ -28,13 +28,6 @@ class CharacterFragment : BaseFragment<FragmentCharacterBinding>(FragmentCharact
         viewModel.liveData.observe(viewLifecycleOwner) {
             adapter.setList(it.results)
         }
-            //binding.refresh.setOnRefreshListener {
-                //binding.refresh.isRefreshing = false
-                //page++
-                //viewModel.getCharacter()
-            //}
-
-
         binding.refresh.setOnRefreshListener {
             pager++
             Toast.makeText(requireContext(), "swipe", Toast.LENGTH_SHORT).show()

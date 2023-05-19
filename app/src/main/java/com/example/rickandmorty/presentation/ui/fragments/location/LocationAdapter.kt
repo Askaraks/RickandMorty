@@ -10,12 +10,10 @@ import com.example.rickandmorty.databinding.ItemLocationBinding
 class LocationAdapter : RecyclerView.Adapter<LocationAdapter.LocationViewHolder>() {
 
     private val list = ArrayList<Location>()
-
     fun setList(list: List<Location>) {
         this.list.addAll(list)
         notifyDataSetChanged()
     }
-
     inner class LocationViewHolder(private val binding: ItemLocationBinding):
         RecyclerView.ViewHolder(binding.root) {
         fun onBind(pos: Int) {

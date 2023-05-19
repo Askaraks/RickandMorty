@@ -2,7 +2,6 @@ package com.example.rickandmorty.data.di
 
 import android.content.Context
 import androidx.room.Room
-import androidx.room.RoomDatabase
 import com.example.rickandmorty.data.repository.LocalRepository
 import com.example.rickandmorty.db.RickDao
 import com.example.rickandmorty.db.RickDataBase
@@ -22,7 +21,8 @@ object LocalModel {
     @Singleton
     fun provideRoom(@ApplicationContext context: Context) = Room.databaseBuilder(
         context,
-        RickDataBase::class.java, "DB_name"
+        RickDataBase::class.java,
+        "DB_name"
         ).allowMainThreadQueries().build()
 
     @Provides

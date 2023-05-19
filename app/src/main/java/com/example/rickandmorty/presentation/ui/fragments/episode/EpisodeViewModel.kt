@@ -7,15 +7,16 @@ import com.example.rickandmorty.data.model.Episode
 import com.example.rickandmorty.data.model.Location
 import com.example.rickandmorty.data.model.MainResponse
 import com.example.rickandmorty.data.repository.RickAndMortyRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class EpisodeViewModel : ViewModel() {
-
-    private val repository = RickAndMortyRepository()
+@HiltViewModel
+class EpisodeViewModel @Inject constructor(
+    private val repository: RickAndMortyRepository
+) : ViewModel() {
     var liveData: LiveData<MainResponse<Episode>> = MutableLiveData()
-
     fun getEpisode(pager:Int) {
         liveData = repository.getEpisode(pager)
     }
-
 }
 

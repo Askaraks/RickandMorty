@@ -6,18 +6,7 @@ import androidx.room.InvalidationTracker
 import androidx.room.RoomDatabase
 import androidx.sqlite.db.SupportSQLiteOpenHelper
 
-@Database(entities = [com.example.rickandmorty.data.model.Result::class], version = 1)
+@Database(entities = [com.example.rickandmorty.data.model.Result::class], version = 2)
 abstract class RickDataBase : RoomDatabase() {
     abstract fun getDao(): RickDao
-    override fun clearAllTables() {
-        TODO("Not yet implemented")
-    }
-
-    override fun createInvalidationTracker(): InvalidationTracker {
-        TODO("Not yet implemented")
-    }
-
-    override fun createOpenHelper(config: DatabaseConfiguration): SupportSQLiteOpenHelper {
-        TODO("Not yet implemented")
-    }
 }

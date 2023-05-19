@@ -11,13 +11,14 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class CharacterViewModel @Inject constructor(private val repository: RickAndMortyRepository,
-                                     private val localRepository: LocalRepository) : ViewModel() {
+class CharacterViewModel @Inject constructor(
+    private val repository: RickAndMortyRepository,
+    private val localRepository: LocalRepository
+    ) : ViewModel() {
 
 
     var liveData: LiveData<MainResponse<com.example.rickandmorty
     .data.model.Result>> = MutableLiveData()
-
 
     fun getCharacter(pager: Int) {
         liveData = repository.getCharacter(pager)
@@ -25,6 +26,4 @@ class CharacterViewModel @Inject constructor(private val repository: RickAndMort
     fun addCharacter(result: com.example.rickandmorty.data.model.Result) {
         localRepository.addCharacter(result)
     }
-
-
 }

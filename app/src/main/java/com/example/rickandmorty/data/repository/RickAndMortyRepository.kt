@@ -14,8 +14,9 @@ import retrofit2.Callback
 import retrofit2.Response
 import javax.inject.Inject
 
-class RickAndMortyRepository @Inject constructor(private val apiService: ApiService)
-{
+class RickAndMortyRepository @Inject constructor(
+    private val apiService: ApiService
+    ) {
 
 
     fun getCharacter(pager: Int): LiveData<MainResponse<Result>> {

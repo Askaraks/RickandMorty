@@ -7,7 +7,7 @@ import androidx.room.Query
 @Dao
 interface RickDao {
 
-    @Query("Select * from result")
+    @Query("SELECT * FROM result")
     fun getAllCharacter(): List<com.example.rickandmorty.data.model.Result>
 
     @Insert

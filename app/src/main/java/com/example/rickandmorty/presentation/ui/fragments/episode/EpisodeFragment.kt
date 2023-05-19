@@ -4,7 +4,9 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.rickandmorty.base.BaseFragment
 import com.example.rickandmorty.databinding.FragmentEpisodeBinding
 import com.example.rickandmorty.presentation.ui.fragments.character.CharacterAdapter
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class EpisodeFragment: BaseFragment<FragmentEpisodeBinding>(FragmentEpisodeBinding::inflate) {
 
     lateinit var adapter: EpisodeAdapter

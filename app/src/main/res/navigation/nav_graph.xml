@@ -27,5 +27,10 @@
         android:name="com.example.rickandmorty.presentation.ui.fragments.pager.PagerFragment"
         android:label="fragment_pager"
         tools:layout="@layout/fragment_pager" />
+    <fragment
+        android:id="@+id/favoriteFragment"
+        android:name="com.example.rickandmorty.presentation.ui.favorite.FavoriteFragment"
+        android:label="fragment_favorite"
+        tools:layout="@layout/fragment_favorite" />
 
 </navigation>

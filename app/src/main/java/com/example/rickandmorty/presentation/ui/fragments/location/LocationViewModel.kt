@@ -7,12 +7,14 @@ import com.example.rickandmorty.data.model.Location
 import com.example.rickandmorty.data.model.MainResponse
 import com.example.rickandmorty.data.model.Result
 import com.example.rickandmorty.data.repository.RickAndMortyRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class LocationViewModel:ViewModel() {
-
-    private val repository = RickAndMortyRepository()
+@HiltViewModel
+class LocationViewModel @Inject constructor(
+    private val repository : RickAndMortyRepository
+):ViewModel() {
     var liveData: LiveData<MainResponse<Location>> = MutableLiveData()
-
     fun getLocation(pager:Int) {
         liveData = repository.getLocation(pager)
     }
